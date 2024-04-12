@@ -103,7 +103,8 @@ export class LoginpageComponent {
       }
 
       //for signup page button
-    } else {
+    }
+    else {
       this.isSubmitted = true;
       var email = this.signupForm.controls['EMAIL'].value;
       console.log(email);
@@ -156,6 +157,7 @@ export class LoginpageComponent {
           this.isconfirmpassword = false;
         }
       }
+      this.isLoading=false;
     }
 
     var pass = this.signupForm.controls['PASSWORD'];
