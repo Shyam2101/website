@@ -1,0 +1,21 @@
+
+  <h2>To Do List</h2>
+  <body class="min-w-52">
+    <div id="myDIV" class="header border-black  border-3 p-10 m-10 rounded-2xl">
+      <h2 class="font-bold text-stone-600 ">My To Do List</h2>
+      <input class="text-black" type="text" [value]="list()" (change)="todolist($event)">
+      <span (click)="add()" class="addBtn">Add</span>
+    </div>
+
+    <ul id="myUL" > @for (item of toDoArray; track item) {
+      <li class="rounded-full border-l-orange-300 border-black border-3 p-10 m-10 relative">{{item}}
+        <span><svg (click)="delete(item)" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 absolute top-0 right-0 ">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+        </svg>
+        </span>
+      </li>}
+
+
+    </ul>
+  </body>
+

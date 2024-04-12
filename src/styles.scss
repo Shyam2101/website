@@ -1,0 +1,36 @@
+/* You can add global styles to this file, and also import other style files */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+  display: flex;
+  background: rgba(0, 0, 0, 0.6);
+  justify-content: center;
+  align-items: center;
+
+  &.inner-loading {
+    background-color: rgba(0, 0, 0, 0.16);
+    position: absolute;
+  }
+
+  img {
+    width: 75px;
+  }
+}
+// .card{
+//   @apply  bg-white rounded-full overflow-hidden shadow-md relative;
+// }
+
+// .badge{
+//   @apply  bg-primary-100 text-primary-200 text-xs uppercase rounded-full p-2 absolute top-0 ml-2 mt-2;
+// }
+
+

@@ -1,0 +1,32 @@
+<form>
+  <h1> CALCULATION</h1>
+<div >
+  <label> Number 1</label>
+  <input type="number" name="num1" [(ngModel)]="num1" class="formcontrol" placeholder="Enter Num-1" (keyup)="onkey($event)">
+</div>
+
+<div>
+  <label>Number 2</label>
+  <input type="number" name="num2"   [(ngModel)]="num2"  class="input" placeholder="Enter Num-2">
+  <br>
+  <input type ="text"  class="input" [(value)]="num2">
+</div>
+
+<div>
+  <label > TOTAL </label>
+
+  <input class="total" placeholder="TOTAL" [value]="result">
+
+</div>
+<div>
+  <button class="button-5" (click)="sum()"> ADD</button>
+
+  <button class="button-5" (click)="sub()"> SUB</button>
+  <button class="button-5" (click)="mul()"> MULTIPLY</button>
+  <button class="button-5" (click)="div()"> DIVIDE</button>
+<br>
+  <button class="button-5" (click)="exitButton()"> EXIT</button>
+
+
+
+</div>

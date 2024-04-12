@@ -1,0 +1,20 @@
+{
+  "extends": [
+    "development"
+  ],
+  "hints": {
+    "axe/forms": "off",
+    "axe/structure": "off",
+    "button-type": "off",
+    "css-prefix-order": "off",
+    "no-inline-styles": "off",
+    "axe/name-role-value": "off",
+    "axe/aria": "off",
+    "axe/text-alternatives": [
+      "default",
+      {
+        "image-alt": "off"
+      }
+    ]
+  }
+}

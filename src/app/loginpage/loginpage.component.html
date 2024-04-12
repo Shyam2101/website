@@ -1,0 +1,96 @@
+<!-- for signin form -->
+@if (isLoginMode) {<div class="px-8">
+
+  <h2>LOGIN</h2>
+<br>
+  <form [formGroup]="loginForm" >
+
+    <h3 class="title-font font-semibold text-gray-900 tracking-widest text-xs">USERNAME</h3>
+    <input type="text"  placeholder="Enter USERNAME" formControlName="USERNAME">
+    @if (loginForm.get('USERNAME')?.invalid && isSubmitted) {  <small >*USERNAME is Required</small>}
+
+  <br>
+  <br>
+
+    <h3 class="title-font font-semibold text-gray-900 tracking-widest text-xs">PASSWORD</h3>
+    <input type="text"  placeholder="Enter PASSWORD" formControlName="PASSWORD">
+    @if (loginForm.get('PASSWORD')?.invalid && isSubmitted) {  <small>*PASSWORD is Required</small>}
+
+  <br>
+  <br>
+
+  </form>
+
+</div>}
+
+
+<!-- for signup form -->
+@if (!isLoginMode) {<div class="px-8">
+
+  <h2>Sign Up</h2>
+  <form  [formGroup]="signupForm" >
+
+
+    <input type="text"  placeholder="Enter NAME" formControlName="USERNAME">
+    @if (signupForm.get('USERNAME')?.invalid && isSubmitted) {<small>*USERNAME is Required</small>}
+
+
+  <br>
+  <br>
+
+    <input type="email"  placeholder="Enter EMAIL" formControlName="EMAIL" >
+    @if (isTrueMail) {<span style="color: tomato;">{{Mail}}</span>}
+    @if (signupForm.get('EMAIL')?.invalid && isSubmitted) { <small>*Email is Required</small>}
+
+
+  <br>
+  <br>
+
+  <input type="text"  (keyup)="passwordValidator($event)" placeholder="Enter PASSWORD" formControlName="PASSWORD">
+
+  @if (isPasswordValidator) {
+    <div>
+      @if (isLowerCase==true) {<span>*one lowercase is must</span>}  <br>
+      @if (isUpperCase==true) {<span>*one uppercase is must</span>}   <br>
+      @if (isNumber) {<span >*(0-9) is must</span>}  <br>
+      @if (isMinChar) {<span>*minimum 8 characters is must</span>} <br>
+      @if (isSpecialChar) {<span>*special characters is must</span>}
+
+  </div>}
+
+  @if (signupForm.get('PASSWORD')?.invalid && isSubmitted) { <small >*PASSWORD is Required</small>}
+
+
+  <br>
+  <br>
+
+  <input type="text" placeholder="CONFIRMPASSWORD" formControlName="CONFIRMPASSWORD">
+  @if (!isconfirmpassword) {<span>Password Mismatch</span>}
+  @if (signupForm.get('CONFIRMPASSWORD')?.invalid && isSubmitted) { <small>*confirm password is must</small>}
+
+  </form>
+</div>}
+
+
+<div class="px-10">
+
+  <button type="submit"(click)="login()">{{ isLoginMode ? 'Login' : 'Submit' }}</button>
+
+<br>
+<br>
+</div>
+
+<div class="px-3">
+
+<button  (click)="toggleMode()">Switch to {{ isLoginMode ? 'Signup' : 'Login' }}</button>
+
+</div>
+
+
+
+
+@if (isLoading) {
+  <div class="loading">
+    <img src="./assets/image/loader.gif" />
+  </div>
+}
