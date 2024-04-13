@@ -142,4 +142,8 @@ export class TableComponent {
       }
     });
   }
+
+  onBack(){
+    this.route.navigate(['projects'])
+  }
 }

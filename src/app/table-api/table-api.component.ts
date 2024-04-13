@@ -9,6 +9,7 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-table-api',
@@ -25,7 +26,7 @@ export class TableApiComponent {
   searchText: any = '';
   toast:boolean=false;
 
-  constructor(private service: ApiService, private form: FormBuilder) {}
+  constructor(private service: ApiService, private form: FormBuilder,public routes :Router) {}
 
   ngOnInit() {
     this.getSummary();
@@ -142,5 +143,11 @@ export class TableApiComponent {
   }
   closePopup() {
     document.getElementById('myModal')!.style.display = 'none';
+  }
+
+
+
+  onback(){
+    this.routes.navigate(['projects'])
   }
 }

@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { routes } from './../app.routes';
 import { Component, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { Route } from '@angular/router';
+import { Route, Router } from '@angular/router';
 
 @Component({
   selector: 'app-to-do-app',
@@ -16,6 +16,9 @@ export class ToDoAppComponent {
 toDoArray:any=[];
 list:any=signal<any>('')
 
+  constructor(public routes:Router){
+
+  }
 
   add(){
     this.toDoArray.push(this.list());
@@ -40,8 +43,9 @@ list:any=signal<any>('')
     console.log(index);
 
     this.toDoArray.splice(index,1)
-
-
   }
 
+  onBack(){
+    this.routes.navigate(['projects'])
+  }
 }
