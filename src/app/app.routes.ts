@@ -10,6 +10,7 @@ import { CalculatorComponent } from './calculator/calculator.component';
 import { TableComponent } from './table/table.component';
 import { TableApiComponent } from './table-api/table-api.component';
 import { CreditsComponent } from './credits/credits.component';
+import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 
 export const routes: Routes = [
   {path:'',component:LoginpageComponent},
@@ -23,4 +24,5 @@ export const routes: Routes = [
   {path:'table',component:TableComponent},
   {path:'tableApi',component:TableApiComponent},
   {path:'credits',component:CreditsComponent},
+  { path: '**', pathMatch: 'full',component:PagenotfoundComponent},
 ];
