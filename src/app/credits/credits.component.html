@@ -1,3 +1,10 @@
+<button (click)="onBack()">
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 ml-3 mt-3 rounded-2xl">
+    <path stroke-linecap="round" stroke-linejoin="round" d="m11.25 9-3 3m0 0 3 3m-3-3h7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+  </svg>
+</button>
+
+
 <img src="https://images01.nicepagecdn.com/page/47/41/css-template-preview-474176.webp" alt="THANK YOU" class="pt-10 pl-72">
 <br>
 <hr>
@@ -5,11 +12,13 @@
 
 
 
-<a href="#" class="ml-10 mt-8 flex flex-col items-center bg-green -100 border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
+<a  class="ml-10 mt-8 flex flex-col items-center bg-green -100 border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
   <img class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6slT6YTrklLBtwi2kz372tiBzQOeSyi8J7A&usqp=CAU" alt="">
   <div class="flex flex-col justify-between p-4 leading-normal">
-      <h5 class="mb-3 font-black text-5xl bg-black text-white dark:text-white">A Special Thanks to GOPI SIR</h5>
-      <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Working under your leadership has shaped my career in numerous ways. I’ve learned Many imortant skills, and I couldn’t have done it without you. Thank you for your guidance and constant support.</p>
+    <div class="font-extrabold">
+    <h5 class="mb-3 font-black text-5xl bg-black text-white dark:text-white">A Special Thanks to GOPI SIR</h5>
+  </div>
+    <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Working under your leadership has shaped my career in numerous ways. I’ve learned Many imortant skills, and I couldn’t have done it without you. Thank you for your guidance and constant support.</p>
       <p>I'm very grateful for everything that you've done for me and it's an honor to put your guidance into practice every day.</p>
   </div>
 </a>
@@ -232,7 +241,7 @@
         <li class="py-3 sm:py-4">
           <div class="flex items-center ">
               <div class="flex-shrink-0">
-                  <img class="w-8 h-8 rounded-full" src="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" alt=" image">
+                  <img class="w-8 h-8 rounded-full" src="" alt=" image">
               </div>
               <div class="flex-1 min-w-0 ms-4">
                   <p class="text-sm font-medium text-gray-900 truncate dark:text-white">
@@ -247,8 +256,6 @@
               </div>
           </div>
       </li>
-
-
       </ul>
  </div>
 </div>
@@ -324,3 +331,9 @@
    </div>
   </div>
 </a>
+
+
+
+
+
+
